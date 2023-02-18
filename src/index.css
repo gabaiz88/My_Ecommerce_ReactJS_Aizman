@@ -19,6 +19,12 @@
     position: relative;
 }
 
+#texto_neon{
+    width: 200px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
 .botones button{
     font-size: 20px;
     color: #fff;
