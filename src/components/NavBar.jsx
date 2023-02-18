@@ -17,15 +17,16 @@ import ps5 from "../assets/controller.png";
 import xbox from "../assets/xbox.png";
 import logo from "../assets/mario.png";
 import texto_neon from "../assets/Texto_Neon_Multicolor.png";
+import CartWidget from "./CartWidget";
 
 const NavBar = () => {
   return (
     <>
       <div className="navbar">
         <Flex minWidth="max-content" alignItems="center" gap="2" w="80%" pt="1">
-          <Box display="flex"  ml="20">
+          <Box display="flex" ml="20">
             <img id="logo_mario" src={logo} />
-            <img id="texto_neon" src={texto_neon} alt=""/>
+            <img id="texto_neon" src={texto_neon} alt="" />
           </Box>
           <Spacer />
           <Flex>
@@ -107,6 +108,7 @@ const NavBar = () => {
             </ButtonGroup>
           </Flex>
         </Flex>
+        <CartWidget/>
       </div>
     </>
   );
