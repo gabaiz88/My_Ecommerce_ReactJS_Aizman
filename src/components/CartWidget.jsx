@@ -1,11 +1,11 @@
 import cart from "../assets/shopping-cart.png";
 
 
-const CartWidget = () => {
+const CartWidget = ({cantidad}) => {
   return (
     <>
       <img id="cart" src={cart} alt="" />
-      <p className="cantidad_items">1</p>
+      <p className="cantidad_items">{cantidad}</p>
     </>
   )
 }
