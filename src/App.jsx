@@ -5,15 +5,16 @@ import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
 
 const App = () => {
-  
   const cantidad = (cantidad) => {
-    cantidad = cantidad;
+    return cantidad;
   };
 
+let cantCarrito = cantidad();
+console.log(cantCarrito);
   return (
     <>
       <ChakraProvider>
-      <NavBar cantidad={cantidad}/>
+      <NavBar cantCarrito={cantCarrito}/>
       <ItemListContainer greeting={"Bienvenidos a NiMiGames"}/>
       <Card_Prueba cantidad={cantidad}/>
       </ChakraProvider>

@@ -19,7 +19,9 @@ import logo from "../assets/mario.png";
 import texto_neon from "../assets/Texto_Neon_Multicolor.png";
 import CartWidget from "./CartWidget";
 
-const NavBar = ({cantidad}) => {
+const NavBar = ({cantCarrito}) => {
+
+console.log(cantCarrito);
   return (
     <>
       <div className="navbar">
@@ -108,7 +110,7 @@ const NavBar = ({cantidad}) => {
             </ButtonGroup>
           </Flex>
         </Flex>
-        <CartWidget cantidad={cantidad}/>
+        <CartWidget/>
       </div>
     </>
   );
