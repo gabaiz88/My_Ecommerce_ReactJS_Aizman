@@ -19,9 +19,10 @@ import logo from "../assets/mario.png";
 import texto_neon from "../assets/Texto_Neon_Multicolor.png";
 import CartWidget from "./CartWidget";
 
-const NavBar = ({cantCarrito}) => {
+const NavBar = ({cantidad}) => {
 
-console.log(cantCarrito);
+cantidad();
+
   return (
     <>
       <div className="navbar">
