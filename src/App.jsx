@@ -1,22 +1,22 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import React from 'react'
-import Card_Prueba from './components/Card_Prueba'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ItemListContainer from './components/ItemListContainer'
 import NavBar from './components/NavBar'
+import Welcome from './components/Welcome'
 
 const App = () => {
-
-  const cantidad = (cantidad) => {
-    console.log(cantidad);
-    return cantidad;
-  };
 
   return (
     <>
       <ChakraProvider>
-      <NavBar cantidad={cantidad}/>
-      <ItemListContainer greeting={"Bienvenidos a NiMiGames"}/>
-      <Card_Prueba cantidad={cantidad}/>
+        <BrowserRouter>
+            <NavBar/>
+          <Routes>
+            <Route exact path="/" element={<Welcome />} />
+            <Route exact path='/catalogue' element={<ItemListContainer/>}/> 
+          </Routes>       
+        </BrowserRouter>
       </ChakraProvider>
     </>
   )

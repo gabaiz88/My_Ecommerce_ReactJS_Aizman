@@ -18,10 +18,10 @@ import xbox from "../assets/xbox.png";
 import logo from "../assets/mario.png";
 import texto_neon from "../assets/Texto_Neon_Multicolor.png";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
+
 
 const NavBar = ({cantidad}) => {
-
-cantidad();
 
   return (
     <>
@@ -35,17 +35,21 @@ cantidad();
           <Flex>
             <ButtonGroup className="botones" gap="7" justify="center">
               <Button colorScheme="teal" variant="link">
-                Inicio
+                <Link to={"/"}>
+                  Inicio
+                </Link>
               </Button>
               <Menu className="menu_nav">
-                <MenuButton
-                  bg="light"
-                  as={Button}
-                  colorScheme="light"
-                  rightIcon={<ChevronDownIcon />}
-                >
-                  Consolas
-                </MenuButton>
+                <Link to={"/catalogue"}>
+                  <MenuButton
+                    bg="light"
+                    as={Button}
+                    colorScheme="light"
+                    rightIcon={<ChevronDownIcon />}
+                    >
+                    Consolas
+                  </MenuButton>
+                </Link>
                 <MenuList bg="#383838">
                   <Flex>
                     <MenuItem bg="ligth">
