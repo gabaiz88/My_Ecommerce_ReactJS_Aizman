@@ -1,4 +1,3 @@
-import { Flex } from "@chakra-ui/react";
 import {
   Card,
   CardBody,
@@ -9,7 +8,8 @@ import {
   Text,
   Divider,
   Button,
-  Center
+  Center,
+  Flex
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom"
 
