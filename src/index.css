@@ -21,7 +21,6 @@
 
 #cart{
     width: 70px;
-    margin-left: 200px;
 }
 
 .cantidad_items{
@@ -68,13 +67,25 @@ body{
     font-weight: 400;
 }
 
-.wallpaper{
-    width:100% ;
-    opacity: .9;
+.welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome h1{
+    font-size: 50px;
 }
 
 .card-footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.botones_navbar{
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 150px 0 60px;    
+    width: 100vh;
 }

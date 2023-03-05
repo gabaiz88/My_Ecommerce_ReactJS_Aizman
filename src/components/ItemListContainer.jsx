@@ -7,28 +7,7 @@ const ItemListContainer = () => {
   const { category } = useParams();
 
   const catFilter = Data.filter((console) => console.category === category);
-  const getDatos = () => {
-    return new Promise((resolve, reject) => {
-      if (Data.length === 0) {
-        reject(new Error("No hay datos"));
-      }
-      setTimeout(() => {
-        return(Data);
-      }, 2000);
-    })
-  }
-
-  async function fetchingData () {
-    try {
-      const dataFetched = await getDatos();
-      console.log(dataFetched);
-    }
-    catch (error) {
-      console.log(error);
-    }
-  }
-
-  fetchingData();
+  console.log(catFilter);
 
   return (
     <div>
@@ -37,7 +16,7 @@ const ItemListContainer = () => {
           Consolas
         </Heading>
       </Center>
-        <ItemList consoles={Data}/>
+        {category ? <ItemList consoles={catFilter} /> : <ItemList consoles={Data} /> }
     </div>
   );
 };
