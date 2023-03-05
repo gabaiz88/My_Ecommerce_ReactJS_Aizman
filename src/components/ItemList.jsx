@@ -12,7 +12,7 @@ const ItemList = ({consoles}) => {
               key={console.id}
               id={console.id}
               name={console.name}
-              description={console.description}
+              description_short={console.description_short}
               price={console.price}
               stock={console.stock}
               category={console.category}

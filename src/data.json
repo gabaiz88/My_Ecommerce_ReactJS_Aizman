@@ -1,7 +1,7 @@
 [
-    {"id": 1, "name": "Playstation 4", "description": "klasmda", "price":120000, "stock": 15, "category": "Ps4", "image": "https://www.necxus.com.ar/products_image/12720/1000x1000_1.jpg"},
-    {"id": 2, "name": "Playstation 5", "description": "klasmddadasa", "price":190000, "stock": 12, "category": "Ps5", "image": "https://www.necxus.com.ar/products_image/22846/1000x1000_2.jpg"},
-    {"id": 3, "name": "Xbox", "description": "klasdasdasdmda", "price":160000, "stock": 9, "category": "Xbox", "image": "https://www.atajo.com.ar/images/0000000RRS-00002000332972RRS-00002-Consola-Xbox-Series-S-02.jpg"},
-    {"id": 4, "name": "Nintendo Switch", "description": "klaasdassmda", "price":130000, "stock": 25, "category": "Nintendo", "image": "https://www.officedepot.com.hn/medias/25625-3.jpg-1200ftw?context=bWFzdGVyfHJvb3R8NTA4NDk2fGltYWdlL2pwZWd8aGYyL2g3Mi8xMDc0ODc4MzYyNDIyMi8yNTYyNS0zLmpwZ18xMjAwZnR3fGE1NzE4YTFhN2U4NDliMTRiZjA3NmVkY2E3YjM5YjNmNDJjYTk5YjUxZTM5Y2RiMDYzMGFhZGIyYmNjNjZlZTg"}
+    {"id": 1, "name": "Playstation 4", "description": "klasmkalsjdlakjdlkasjldda", "description_short": "Ps4 160gb", "price":120000, "stock": 15, "category": "Ps4", "image": "https://www.necxus.com.ar/products_image/12720/1000x1000_1.jpg"},
+    {"id": 2, "name": "Playstation 5", "description": "klasmakjdlkddadasa", "description_short": "Ps5 1tb", "price":190000, "stock": 12, "category": "Ps5", "image": "https://www.necxus.com.ar/products_image/22846/1000x1000_2.jpg"},
+    {"id": 3, "name": "Xbox", "description": "klasdasdaalksjdlkajdlkajsdmda", "description_short": "Xbox 320gb", "price":160000, "stock": 9, "category": "Xbox", "image": "https://www.atajo.com.ar/images/0000000RRS-00002000332972RRS-00002-Consola-Xbox-Series-S-02.jpg"},
+    {"id": 4, "name": "Nintendo Switch", "description": "klaasdasdasdklajsdlkassmda", "description_short": "Nintendo Switch 250gb","price":130000, "stock": 25, "category": "Nintendo", "image": "https://www.officedepot.com.hn/medias/25625-3.jpg-1200ftw?context=bWFzdGVyfHJvb3R8NTA4NDk2fGltYWdlL2pwZWd8aGYyL2g3Mi8xMDc0ODc4MzYyNDIyMi8yNTYyNS0zLmpwZ18xMjAwZnR3fGE1NzE4YTFhN2U4NDliMTRiZjA3NmVkY2E3YjM5YjNmNDJjYTk5YjUxZTM5Y2RiMDYzMGFhZGIyYmNjNjZlZTg"}
 ]
 

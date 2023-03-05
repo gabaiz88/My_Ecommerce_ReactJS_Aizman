@@ -89,3 +89,28 @@ body{
     margin: 0 150px 0 60px;    
     width: 100vh;
 }
+
+#welcome_nimi{
+    width: 500px;
+    margin: 30px 0; 
+}
+
+.form_cart{
+    border: solid rgba(0, 0, 0, 0.186);
+    border-radius: 10px;
+    width: 30%;
+    padding: 15px;
+}
+
+.cart_{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    gap: 50px;
+}
+
+.form_cart label{
+    margin: 5px 0;
+}

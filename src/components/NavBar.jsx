@@ -36,7 +36,7 @@ const NavBar = () => {
             <Flex>
               <ButtonGroup className="botones" gap="7" justify="center">
                 <Button colorScheme="teal" variant="link">
-                  <Link to={"/catalogue"}>Inicio</Link>
+                  <Link to={"/catalogue"}>Catálogo</Link>
                 </Button>
                 <Menu className="menu_nav">
                   <MenuButton

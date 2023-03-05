@@ -13,7 +13,7 @@ const ItemListContainer = () => {
     <div>
       <Center h="100px" color="black">
         <Heading as="h2" size="2xl">
-          Consolas
+        { !category ? <h2>Consolas</h2> : <h2>{`${category}`}</h2> }
         </Heading>
       </Center>
         {category ? <ItemList consoles={catFilter} /> : <ItemList consoles={Data} /> }
