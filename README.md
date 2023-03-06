@@ -5,6 +5,6 @@ Consolas, Juegos, Accesorios. De Nintendo, Playstation y Xbox</h3>
 
 <p>06/03/2023 - Pre entrega 2: Configurando rutas de acceso, catálogo, filtro por categoría de consolas y formulario en cart</p>
 
-[![Watch the video](https://youtu.be/_i6gKzUd4Fg)](https://youtu.be/_i6gKzUd4Fg)
+![NiMiGames](https://user-images.githubusercontent.com/111024432/223128207-56d873cb-5356-4a21-848b-89be508e8a56.gif)
 
 Para clonar el proyecto copia el siguiente link: <a>https://github.com/gabaiz88/My_Ecommerce_ReactJS_Aizman.git</a>
