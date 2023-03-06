@@ -6,6 +6,11 @@
     -webkit-text-size-adjust: 100%;
   }
 
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
 .navbar{
     display: flex;
     align-items: center;
@@ -57,10 +62,6 @@
     margin-right: 20px;
 }
 
-body{
-    height: 100vh;
-    width: 100vw;
-}
 
 .items_cantidad{
     font-size: 25px;
@@ -113,4 +114,45 @@ body{
 
 .form_cart label{
     margin: 5px 0;
+}
+
+.footer{
+    background-color: rgba(72,72,72,0.1);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #e60012;
+}
+
+.footer .networks button{
+    font-size: 30px;
+    padding: 10px;
+}
+
+.footer .aboutUs {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.footer .footer_categories{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .footer_networks{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 25px;
+}
+
+.footer h2{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.footer h3{
+    font-size: 20px;
 }

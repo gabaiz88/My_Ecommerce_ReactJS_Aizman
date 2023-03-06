@@ -24,7 +24,7 @@ const NavBar = () => {
   return (
     <>
       <div className="navbar">
-        <Flex minWidth="max-content" alignItems="center" gap="2" w="80%" pt="1">
+        <Flex maxW="150rem" alignItems="center" gap="2" pt="1">
           <Link to={"/"}>
             <Box display="flex" ml="20">
               <img id="logo_mario" src={logo} />

@@ -31,8 +31,8 @@ const FormCart = () => {
         <Input focusBorderColor="lime" placeholder="Nombre" />
         <FormLabel>Apellido</FormLabel>
         <Input focusBorderColor="lime" placeholder="Apellido" />
-        <FormLabel>Country</FormLabel>
-        <Select focusBorderColor="lime" placeholder="Pais">
+        <FormLabel>País</FormLabel>
+        <Select focusBorderColor="lime" placeholder="País">
           <option>Argentina</option>
           <option>Brasil</option>
           <option>Chile</option>
