@@ -11,8 +11,19 @@ import {
   Flex,
   Button,
 } from "@chakra-ui/react";
+import {useRef, useEffect} from 'react';
+
 
 const FormCart = () => {
+
+  useEffect(() => {
+    const validarCompra = event => {
+      alert("confirmada");
+    };
+    const boton_confirmar = document.getElementById("confirm");
+    boton_confirmar.addEventListener('click', validarCompra);
+  }, []);
+  
   return (
     <div className="form_cart">
       <FormControl isRequired>
@@ -36,7 +47,7 @@ const FormCart = () => {
             <Radio value="Fijo">Fijo</Radio>
           </HStack>
         </RadioGroup>
-        <Button left="60%" colorScheme="whatsapp">
+        <Button id="confirm" type="submit" left="60%" colorScheme="whatsapp">
           Confirmar Compra
         </Button>
       </FormControl>
