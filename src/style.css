@@ -120,9 +120,11 @@ body{
     background-color: rgba(72,72,72,0.1);
     height: 200px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     color: #e60012;
+    margin-top: 20px;
+    padding-top: 15px;
 }
 
 .footer .networks button{
@@ -144,8 +146,12 @@ body{
 .footer .footer_networks{
     display: flex;
     flex-direction: column;
-    position: relative;
-    bottom: 25px;
+}
+
+.footer .footer_contact{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
 }
 
 .footer h2{
@@ -153,6 +159,7 @@ body{
     font-weight: 500;
     margin-bottom: 5px;
 }
+
 .footer h3{
     font-size: 20px;
 }
