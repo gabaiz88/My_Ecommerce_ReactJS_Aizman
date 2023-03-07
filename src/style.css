@@ -29,16 +29,16 @@ body{
 }
 
 .cantidad_items{
-    background-color: #fff;
+    background-color: #f04040;
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     position: relative;
     bottom: 20px;
-    right: 20px;
+    right: 10px;
     text-align: center;
-    padding-top: 2px;
     font-weight: 600;
+    color: #fff;
 }
 
 #texto_neon{
@@ -127,9 +127,9 @@ body{
     padding-top: 15px;
 }
 
-.footer .networks button{
-    font-size: 30px;
+.footer .networks i{
     padding: 10px;
+    font-size: 30px;
 }
 
 .footer .aboutUs {
@@ -162,4 +162,9 @@ body{
 
 .footer h3{
     font-size: 20px;
+}
+
+.contact_box{
+    background-color: #e60012;
+
 }

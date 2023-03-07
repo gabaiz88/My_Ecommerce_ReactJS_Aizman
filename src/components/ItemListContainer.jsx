@@ -6,17 +6,17 @@ import { useParams } from "react-router-dom";
 const ItemListContainer = () => {
   const { category } = useParams();
 
-  const catFilter = Data.filter((console) => console.category === category);
+  const catFilter = Data.filter((product) => product.category === category);
   console.log(catFilter);
 
   return (
     <div>
       <Center h="100px" color="black">
         <Heading as="h2" size="2xl">
-        { !category ? <h2>Consolas</h2> : <h2>{`${category}`}</h2> }
+        { !category ? <h2>Catálogo</h2> : <h2>{`${category}`}</h2> }
         </Heading>
       </Center>
-        {category ? <ItemList consoles={catFilter} /> : <ItemList consoles={Data} /> }
+        {category ? <ItemList product={catFilter} /> : <ItemList product={Data} /> }
     </div>
   );
 };

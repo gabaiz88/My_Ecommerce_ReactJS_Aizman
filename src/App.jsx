@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Welcome from "./components/Welcome";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
             <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/contact" element={<Contact />} />
           </Routes>
           <Footer />
         </BrowserRouter>

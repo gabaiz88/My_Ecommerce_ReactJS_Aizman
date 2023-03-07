@@ -20,7 +20,7 @@ const Item = ({ id, name, price, description_short, image }) => {
         <Flex>
           <Card maxW="sm">
             <CardBody>
-              <Image boxSize={"200px"} src={image}/>
+              <Image src={image}/>
               <Stack mt="6" spacing="3">
                 <Heading size="md">{name}</Heading>
                 <Text>{description_short}</Text>

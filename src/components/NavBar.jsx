@@ -95,7 +95,9 @@ const NavBar = () => {
                     <MenuItem bg="ligth">Accion</MenuItem>
                     <MenuItem bg="ligth">Aventura</MenuItem>
                     <MenuItem bg="ligth">Deportes</MenuItem>
-                    <MenuItem bg="ligth">Conduccion</MenuItem>
+                    <Link to={`/category/${"Carrera"}`}>
+                      <MenuItem bg="ligth">Carrera</MenuItem>
+                    </Link>
                     <MenuItem bg="ligth">Simulador</MenuItem>
                   </MenuList>
                 </Menu>
@@ -114,9 +116,11 @@ const NavBar = () => {
                     <MenuItem bg="ligth">Varios</MenuItem>
                   </MenuList>
                 </Menu>
+                <Link to={"/contact"}>
                 <Button colorScheme="teal" variant="outline">
                   Contacto
                 </Button>
+                </Link>
               </ButtonGroup>
             </Flex>
           </div>

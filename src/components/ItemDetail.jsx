@@ -28,7 +28,7 @@ const ItemDetail = ({ data }) => {
             <Center>
                 <Card maxW="sm">
                 <CardBody>
-                    <Image boxSize={"200px"} src={dato.image} />
+                    <Image src={dato.image} />
                     <Stack mt="6" spacing="3">
                     <Heading size="md">{dato.name}</Heading>
                     <Text>{dato.description}</Text>
