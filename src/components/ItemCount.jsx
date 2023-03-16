@@ -1,6 +1,5 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import {
-  Text,
   ButtonGroup,
   IconButton,
   Tooltip,
@@ -9,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
-const ItemCount = ({ stock, id, price, name }) => {
+const ItemCount = ({ stock, onAdd, id }) => {
   const [count, setCount] = useState(1);
 
   const addQty = () => {
@@ -19,7 +18,7 @@ const ItemCount = ({ stock, id, price, name }) => {
   const substractQty = () => {
     setCount(count - 1);
   };
-  
+
   return (
     <>
       <ButtonGroup size="sm" isAttached variant="outline">
@@ -32,7 +31,7 @@ const ItemCount = ({ stock, id, price, name }) => {
         )}
         <Center>
           <Button
-            onClick={() => addToCart()}
+            onClick={() => onAdd(count, id)}
             variant="solid"
             colorScheme="blue"
           >

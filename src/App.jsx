@@ -8,27 +8,30 @@ import Welcome from "./components/Welcome";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
+import ShoppingCartProvider from "./Context/ShoppingCartContext";
 
 const App = () => {
   return (
     <>
       <ChakraProvider>
-        <BrowserRouter>
-          <NavBar />
-          <Routes>
-            <Route exact path="/" element={<Welcome />} />
-            <Route exact path="/catalogue" element={<ItemListContainer />} />
-            <Route
-              exact
-              path="/category/:category"
-              element={<ItemListContainer />}
-            />
-            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-            <Route exact path="/cart" element={<Cart />} />
-            <Route exact path="/contact" element={<Contact />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
+        <ShoppingCartProvider>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route exact path="/" element={<Welcome />} />
+              <Route exact path="/catalogue" element={<ItemListContainer />} />
+              <Route
+                exact
+                path="/category/:category"
+                element={<ItemListContainer />}
+              />
+              <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+              <Route exact path="/cart" element={<Cart />} />
+              <Route exact path="/contact" element={<Contact />} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </ShoppingCartProvider>
       </ChakraProvider>
     </>
   );

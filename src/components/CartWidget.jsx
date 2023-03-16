@@ -1,9 +1,11 @@
-import cart from "../assets/shopping-cart.png";
 import { Flex } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartArrowDown, faCartFlatbed, faCartPlus, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
+import { CartContext } from "../Context/ShoppingCartContext";
 
 const CartWidget = ({}) => {
+
   return (
     <>       
     <Flex>

@@ -7,7 +7,6 @@ const ItemListContainer = () => {
   const { category } = useParams();
 
   const catFilter = Data.filter((product) => product.category === category);
-  console.log(catFilter);
 
   return (
     <div>

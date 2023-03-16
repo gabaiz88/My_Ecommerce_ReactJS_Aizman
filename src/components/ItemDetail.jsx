@@ -7,19 +7,23 @@ import {
   Stack,
   Text,
   Divider,
-  Button,
   Center,
-  Flex,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
-
+import { useContext, useState } from "react";
+import { CartContext } from "../Context/ShoppingCartContext";
 
 const ItemDetail = ({ data }) => {
+  const { id } = useParams();
+  const { addItem, cart, setCart } = useContext(CartContext);
 
-    const { id } = useParams();
+  const dataFilter = data.filter((dato) => dato.id == id);
 
-    const dataFilter = data.filter((dato) => dato.id == id);
+  const onAdd = (quantity, id) => {
+    console.log(id);
+    addItem(quantity, id);
+  }
 
   return (
     <>
@@ -42,9 +46,8 @@ const ItemDetail = ({ data }) => {
                     <Center className="card-footer">
                         <ItemCount
                         stock={dato.stock}
+                        onAdd={onAdd}
                         id={dato.id}
-                        price={dato.price}
-                        name={dato.name}
                         />
                     </Center>
                 </CardFooter>
