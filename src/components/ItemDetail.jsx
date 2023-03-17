@@ -11,17 +11,16 @@ import {
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
 
 const ItemDetail = ({ data }) => {
   const { id } = useParams();
-  const { addItem, cart, setCart } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
   const dataFilter = data.filter((dato) => dato.id == id);
 
   const onAdd = (quantity, id) => {
-    console.log(id);
     addItem(quantity, id);
   }
 

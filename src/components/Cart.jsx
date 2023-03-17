@@ -12,11 +12,12 @@ import {
   CardBody,
   CardFooter,
   Text,
+  Box,
 } from "@chakra-ui/react";
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
-  
+  const { cart, totalAmount } = useContext(CartContext);
+
   if (cart.length === 0) {
     return (
       <>
@@ -31,37 +32,36 @@ const Cart = () => {
   }
 
   return (
-    <>
-      <Center bg="#D6EAF8" h="100px" color="black">
-        <Heading as="h2" size="2xl">
-          Cart
-        </Heading>
-      </Center>
+    <div className="main_cart">
       {cart.map((item) => {
         return (
-          <Container key={item.id} className="main-catalogue">
-            <Card maxW="sm">
+          <Container key={item.id} className="cart_container">
+            <Card className="cards">
+              <Box className="img_item">
+                <img src={item.image} alt="imagen_producto" />
+              </Box>
               <CardHeader>
                 <Heading size="md">{item.name}</Heading>
               </CardHeader>
               <CardBody>
-                <Text as="b">Quantity: {item.quantity}</Text>
-                <Text>Price: U$D {item.price}</Text>
+                <Text as="b">Cantidad: {item.quantity}</Text>
+                <Text>Subtotal: $ {item.price * item.quantity}.-</Text>
               </CardBody>
               <CardFooter>
                 <Button
                   colorScheme="red"
                   onClick={() => console.log("Eliminando")}
                 >
-                  Delete from cart
+                  X
                 </Button>
               </CardFooter>
             </Card>
           </Container>
         );
       })}
+      <div className="tag_total_amount">Total: {totalAmount}.-</div>
       <FormCart />
-    </>
+    </div>
   );
 };
 
