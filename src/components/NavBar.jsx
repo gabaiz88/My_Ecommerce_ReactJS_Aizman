@@ -93,7 +93,9 @@ const NavBar = () => {
                   </MenuButton>
                   <MenuList bg="#383838">
                     <MenuItem bg="ligth">Accion</MenuItem>
-                    <MenuItem bg="ligth">Aventura</MenuItem>
+                    <Link to={`/category/${"Aventura"}`}>
+                      <MenuItem bg="ligth">Aventura</MenuItem>
+                    </Link>
                     <MenuItem bg="ligth">Deportes</MenuItem>
                     <Link to={`/category/${"Carrera"}`}>
                       <MenuItem bg="ligth">Carrera</MenuItem>

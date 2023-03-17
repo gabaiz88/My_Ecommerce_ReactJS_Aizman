@@ -1,5 +1,7 @@
-import { createContext, useState } from "react";
-import data from '../data.json';
+import { createContext, useState, useEffect } from "react";
+import { collection, getDocs, getFirestore } from "firebase/firestore"
+import { useParams } from "react-router-dom";
+
 
 export const CartContext = createContext([]);
 
@@ -7,10 +9,25 @@ const ShoppingCartProvider = ({ children }) => {
     const [ cart, setCart ] = useState([]);
     const [ cartQty, setCartQty ] = useState(0);
     const [ totalAmount, setTotalAmount ] = useState(0);
+    const [ products, setProducts ] = useState([])
+    // const { id } = useParams();
+
+    useEffect(() => {
+      const db = getFirestore();
+  
+      const itemsCollection = collection (db, "videojuegos");
+      getDocs(itemsCollection).then((snapshot) =>{
+        const docs = snapshot.docs.map((doc)=> ({
+          ...doc.data(), 
+          id: doc.id
+        }));
+        setProducts(docs);
+      })
+    },[])
 
     const cleanCart = () => setCart([]);
     
-    const findProduct = (id) => data.find(product => product.id === id);
+    const findProduct = (id) => products.find(product => product.id === id);
     
     const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
 
@@ -24,6 +41,7 @@ const ShoppingCartProvider = ({ children }) => {
         let total = cartQty;
         let newCart;
         let item = findProduct(id);
+        console.log(id);
         let product = cart.find(product => product.id === item.id);
         if(product) {
             product.quantity += quantity;
@@ -35,6 +53,7 @@ const ShoppingCartProvider = ({ children }) => {
         setCart(newCart);
         setCartQty(total);
         addAmount(item.price, quantity);
+        console.log(cart);
     };
 
     return (

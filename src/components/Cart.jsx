@@ -22,6 +22,7 @@ const Cart = () => {
     return '$' + num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
  }
 
+
   if (cart.length === 0) {
     return (
       <>

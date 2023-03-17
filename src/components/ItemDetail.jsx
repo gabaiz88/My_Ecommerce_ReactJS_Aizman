@@ -11,12 +11,30 @@ import {
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import ItemCount from "./ItemCount";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
+import { doc, getDoc, getFirestore } from "firebase/firestore"
+
 
 const ItemDetail = ({ data }) => {
   const { id } = useParams();
   const { addItem } = useContext(CartContext);
+  const [ product, setProduct ] = useState([])
+
+  
+  function currencyFormat(num) {
+    return '$' + num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+ }
+
+  useEffect(() => {
+    const db = getFirestore();
+
+    const oneItem = doc(db, "videojuegos", `${id}`);
+    getDoc(oneItem).then((snapshot) =>{
+      const doc = snapshot.data();
+      setProduct(doc);
+    })
+  },[])
 
   const dataFilter = data.filter((dato) => dato.id == id);
 
@@ -34,9 +52,9 @@ const ItemDetail = ({ data }) => {
                     <Image src={dato.image} />
                     <Stack mt="6" spacing="3">
                     <Heading size="md">{dato.name}</Heading>
-                    <Text>{dato.description}</Text>
+                    <Text>{dato.description_short}</Text>
                     <Text color="blue.600" fontSize="2xl">
-                        {dato.price + ".-"}
+                    {currencyFormat(dato.price)}
                     </Text>
                     </Stack>
                 </CardBody>

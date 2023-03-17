@@ -1,12 +1,27 @@
-import Data from "../data.json";
 import { Heading, Center } from "@chakra-ui/react";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, getFirestore } from "firebase/firestore"
+import { useEffect, useState } from "react";
 
 const ItemListContainer = () => {
-  const { category } = useParams();
+  const { category, subcategoria } = useParams();
+  const [ products, setProducts ] = useState([])
 
-  const catFilter = Data.filter((product) => product.category === category);
+  useEffect(() => {
+    const db = getFirestore();
+
+    const itemsCollection = collection (db, "videojuegos");
+    getDocs(itemsCollection).then((snapshot) =>{
+      const docs = snapshot.docs.map((doc)=> ({
+        ...doc.data(), 
+        id: doc.id
+      }));
+      setProducts(docs);
+    })
+  },[])
+
+  const catFilter = products.filter((product) => product.category === category);
 
   return (
     <div>
@@ -15,7 +30,7 @@ const ItemListContainer = () => {
         { !category ? <h2>Catálogo</h2> : <h2>{`${category}`}</h2> }
         </Heading>
       </Center>
-        {category ? <ItemList product={catFilter} /> : <ItemList product={Data} /> }
+        {category ? <ItemList product={catFilter} /> : <ItemList product={products} /> }
     </div>
   );
 };
