@@ -18,6 +18,10 @@ import {
 const Cart = () => {
   const { cart, totalAmount } = useContext(CartContext);
 
+  function currencyFormat(num) {
+    return '$' + num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+ }
+
   if (cart.length === 0) {
     return (
       <>
@@ -45,7 +49,7 @@ const Cart = () => {
               </CardHeader>
               <CardBody>
                 <Text as="b">Cantidad: {item.quantity}</Text>
-                <Text>Subtotal: $ {item.price * item.quantity}.-</Text>
+                <Text>Subtotal: $ {currencyFormat(item.price * item.quantity)}.-</Text>
               </CardBody>
               <CardFooter>
                 <Button
@@ -59,7 +63,7 @@ const Cart = () => {
           </Container>
         );
       })}
-      <div className="tag_total_amount">Total: {totalAmount}.-</div>
+      <div className="tag_total_amount">Total: {currencyFormat(totalAmount)}.-</div>
       <FormCart />
     </div>
   );
