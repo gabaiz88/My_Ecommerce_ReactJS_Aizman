@@ -89,27 +89,6 @@ const NavBar = () => {
                     colorScheme="light"
                     rightIcon={<ChevronDownIcon />}
                   >
-                    Juegos
-                  </MenuButton>
-                  <MenuList bg="#383838">
-                    <MenuItem bg="ligth">Accion</MenuItem>
-                    <Link to={`/category/${"Aventura"}`}>
-                      <MenuItem bg="ligth">Aventura</MenuItem>
-                    </Link>
-                    <MenuItem bg="ligth">Deportes</MenuItem>
-                    <Link to={`/category/${"Carrera"}`}>
-                      <MenuItem bg="ligth">Carrera</MenuItem>
-                    </Link>
-                    <MenuItem bg="ligth">Simulador</MenuItem>
-                  </MenuList>
-                </Menu>
-                <Menu className="menu_nav">
-                  <MenuButton
-                    bg="light"
-                    as={Button}
-                    colorScheme="light"
-                    rightIcon={<ChevronDownIcon />}
-                  >
                     Accesorios
                   </MenuButton>
                   <MenuList bg="#383838">

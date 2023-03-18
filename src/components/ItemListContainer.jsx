@@ -3,12 +3,16 @@ import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore } from "firebase/firestore"
 import { useEffect, useState } from "react";
+import Loading from "./Loading";
 
 const ItemListContainer = () => {
   const { category, subcategoria } = useParams();
   const [ products, setProducts ] = useState([])
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    
+    console.log(isLoading);
     const db = getFirestore();
 
     const itemsCollection = collection (db, "videojuegos");
@@ -18,10 +22,20 @@ const ItemListContainer = () => {
         id: doc.id
       }));
       setProducts(docs);
+      setIsLoading(false);
     })
   },[])
 
   const catFilter = products.filter((product) => product.category === category);
+
+  function render() {
+    if(isLoading){
+      return <Loading />
+    }
+    else{
+     return category ? <ItemList product={catFilter} /> : <ItemList product={products} />
+    }
+  }
 
   return (
     <div>
@@ -30,7 +44,7 @@ const ItemListContainer = () => {
         { !category ? <h2>Catálogo</h2> : <h2>{`${category}`}</h2> }
         </Heading>
       </Center>
-        {category ? <ItemList product={catFilter} /> : <ItemList product={products} /> }
+      {render()}
     </div>
   );
 };

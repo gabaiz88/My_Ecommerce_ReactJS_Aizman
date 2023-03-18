@@ -10,11 +10,11 @@ const ShoppingCartProvider = ({ children }) => {
     const [ cartQty, setCartQty ] = useState(0);
     const [ totalAmount, setTotalAmount ] = useState(0);
     const [ products, setProducts ] = useState([])
-    // const { id } = useParams();
+    const [isLoading, setIsLoading] = useState(true);
+
 
     useEffect(() => {
       const db = getFirestore();
-  
       const itemsCollection = collection (db, "videojuegos");
       getDocs(itemsCollection).then((snapshot) =>{
         const docs = snapshot.docs.map((doc)=> ({
@@ -27,9 +27,50 @@ const ShoppingCartProvider = ({ children }) => {
 
     const cleanCart = () => setCart([]);
     
-    const findProduct = (id) => products.find(product => product.id === id);
+    const findProduct = (id, array) => array.find(product => product.id === id);
+    // const findItemInCart = (id) => cart.find(item => item.id === id);
     
-    const removeProduct = (id) => setCart(cart.filter(product => product.id !== id));
+    function substractAmount (price) {
+        let amount = totalAmount;
+        amount -= price;
+        setTotalAmount(amount)
+    }
+
+    function substractQty () {
+        if (cartQty > 0) {
+            setCartQty(cartQty -1);
+        }
+    }
+
+    function cartIsEmpty () {
+        let empty = false;
+        for (let index = 0; index < cart.length; index++) {
+            if(cart[index].quantity === 0 && cart.length <= 1){
+                empty = true;
+            }
+        }
+        return empty;
+    }
+
+    const removeProduct = (id) => {
+        let itemInCart = findProduct(id, cart);
+        let quantity = itemInCart.quantity--;
+        let posInCart = cart.indexOf(itemInCart);
+        let newCart = cart.filter(product => product.id !== id);
+        substractQty();
+        if(cart[posInCart].quantity === 0){
+            setCart(newCart); 
+        } else {
+            setCart ([...newCart, {...itemInCart, quantity: quantity - 1}]);
+        }
+        if(cart.length > 0 && totalAmount > 0){
+            substractAmount(itemInCart.price)
+        }
+        let cartEmpty = cartIsEmpty();
+        if (cartEmpty){
+            cleanCart();
+        }
+    }
 
     function addAmount (price, quantity) {
         let amount = totalAmount;
@@ -40,8 +81,7 @@ const ShoppingCartProvider = ({ children }) => {
     const addItem = (quantity, id) => {
         let total = cartQty;
         let newCart;
-        let item = findProduct(id);
-        console.log(id);
+        let item = findProduct(id, products);
         let product = cart.find(product => product.id === item.id);
         if(product) {
             product.quantity += quantity;
@@ -53,7 +93,6 @@ const ShoppingCartProvider = ({ children }) => {
         setCart(newCart);
         setCartQty(total);
         addAmount(item.price, quantity);
-        console.log(cart);
     };
 
     return (

@@ -5,8 +5,8 @@ import Item from "./Item";
 const ItemList = ({product}) => {
   return (
     <>
-        <Container maxW="container.lg">
-          <Flex gap={"5"} wrap="wrap">
+        <Container maxW="90%">
+          <Flex gap={"10"} wrap="wrap">
             {product.map((product) => (
               <Item
               key={product.id}

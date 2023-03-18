@@ -49,7 +49,7 @@ const Footer = () => {
         </ul>
       </div>
       <div className="footer_contact">
-        <h2>Contactános</h2>
+        <h2>Contactanos</h2>
         <Link target="_blank" to={"https://wa.link/6cnj10"}>
           <Flex alignItems="center" gap={2}>
             <FontAwesomeIcon icon={faWhatsapp} fontSize={22} />

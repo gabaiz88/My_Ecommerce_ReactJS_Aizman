@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 
 const Cart = () => {
-  const { cart, totalAmount } = useContext(CartContext);
+  const { cart, totalAmount, removeProduct } = useContext(CartContext);
 
   function currencyFormat(num) {
     return '$' + num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -50,12 +50,12 @@ const Cart = () => {
               </CardHeader>
               <CardBody>
                 <Text as="b">Cantidad: {item.quantity}</Text>
-                <Text>Subtotal: $ {currencyFormat(item.price * item.quantity)}.-</Text>
+                <Text>Subtotal: {currencyFormat(item.price * item.quantity)}.-</Text>
               </CardBody>
               <CardFooter>
                 <Button
                   colorScheme="red"
-                  onClick={() => console.log("Eliminando")}
+                  onClick={() => removeProduct(item.id)}
                 >
                   X
                 </Button>
