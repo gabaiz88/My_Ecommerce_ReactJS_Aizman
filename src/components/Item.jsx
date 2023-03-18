@@ -27,7 +27,7 @@ const Item = ({ id, name, description_short, price, image }) => {
             <CardBody>
               <Image src={image} width={250} />
               <Stack mt="6" spacing="3">
-                <Heading size="md">{name}</Heading>
+                <Heading size="sm">{name}</Heading>
                 <Text>{description_short}</Text>
                 <Text color="blue.600" fontSize="2xl">
                 {currencyFormat(1*price)}.-
