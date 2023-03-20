@@ -22,8 +22,8 @@ const Item = ({ id, name, description_short, price, image }) => {
   return (
     <div>
       <div key={id}>
-        <Flex>
-          <Card maxW="sm">
+        <Flex alignItems="center">
+          <Card maxW="sm" width={300}>
             <CardBody>
               <Image src={image} width={250} />
               <Stack mt="6" spacing="3">

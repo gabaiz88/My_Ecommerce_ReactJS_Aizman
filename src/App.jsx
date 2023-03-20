@@ -25,6 +25,11 @@ const App = () => {
                 path="/category/:category"
                 element={<ItemListContainer />}
               />
+                <Route
+                exact
+                path="/category/subcategory/:subcategory"
+                element={<ItemListContainer />}
+              />
               <Route exact path="/item/:id" element={<ItemDetailContainer />} />
               <Route exact path="/cart" element={<Cart />} />
               <Route exact path="/contact" element={<Contact />} />

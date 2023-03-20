@@ -12,7 +12,6 @@ const ItemList = ({product}) => {
               key={product.id}
               id={product.id}
               name={product.name}
-              description_short={product.description_short}
               price={product.price}
               stock={product.stock}
               category={product.category}

@@ -54,7 +54,7 @@ const ItemDetail = ({ data }) => {
                     <Heading size="md">{dato.name}</Heading>
                     <Text>{dato.description_short}</Text>
                     <Text color="blue.600" fontSize="2xl">
-                    {currencyFormat(dato.price)}
+                    {currencyFormat(dato.price)}.-
                     </Text>
                     </Stack>
                 </CardBody>

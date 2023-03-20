@@ -92,9 +92,18 @@ const NavBar = () => {
                     Accesorios
                   </MenuButton>
                   <MenuList bg="#383838">
-                    <MenuItem bg="ligth">Joystick</MenuItem>
-                    <MenuItem bg="ligth">Llaveros</MenuItem>
-                    <MenuItem bg="ligth">Varios</MenuItem>
+                    <Link to={`/category/subcategory/${"Joystick"}`}>
+                      <MenuItem bg="ligth">
+                       <img className="imagen_consola" src="https://firebasestorage.googleapis.com/v0/b/proyecto-react-coder-b2d15.appspot.com/o/Joystick_Snes_ico.png?alt=media&token=2ad52680-50db-4f83-90f6-280238f3f53a" alt="" />
+                        Joystick
+                      </MenuItem>
+                    </Link>
+                    <Link to={`/category/${"Llavero"}`}>
+                      <MenuItem bg="ligth">
+                        <img className="imagen_consola" src="https://firebasestorage.googleapis.com/v0/b/proyecto-react-coder-b2d15.appspot.com/o/Llavero_ico.png?alt=media&token=9eada56f-ca1f-48e3-8722-03018ab6316f" alt="" />
+                        Llaveros
+                      </MenuItem>
+                    </Link>
                   </MenuList>
                 </Menu>
                 <Link to={"/contact"}>
