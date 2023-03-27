@@ -100,9 +100,9 @@
 }
 
 .form_cart{
-    border: solid rgba(0, 0, 0, 0.186);
+    border: solid #f04040;
     border-radius: 10px;
-    width: 30%;
+    width: 45%;
     padding: 15px;
     margin: 50px;
 }
@@ -270,4 +270,17 @@
     color: red;
     font-size: 30px;
     margin-left: 500px;
+}
+
+.links_tree{
+    font-size: 25px;
+    color: #e60012;
+    font-weight: 600;
+    margin: 30px 0 30px 50px;
+}
+
+#catalogo_text{
+    font-size: 60px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
 }

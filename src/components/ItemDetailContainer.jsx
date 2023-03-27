@@ -1,10 +1,13 @@
 import ItemDetail from "./ItemDetail";
 import { collection, getDocs, getFirestore } from "firebase/firestore"
 import { useEffect, useState } from "react";
+import Loading from "./Loading";
+import { Center } from "@chakra-ui/react";
 
 const ItemDetailContainer = () => {
   
   const [ products, setProducts ] = useState([])
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const db = getFirestore();
@@ -16,13 +19,23 @@ const ItemDetailContainer = () => {
         id: doc.id
       }));
       setProducts(docs);
+      setIsLoading(false);
     })
   },[])
 
+  function render() {
+    if (isLoading) {
+      return <Loading />;
+    } else {
+      return <ItemDetail data={products}/>
+    }
+  }
+
     return (
-        <>
-        <ItemDetail data={products}/>
-        </>
+      <div>
+        <Center color="black"></Center>
+        {render()}
+    </div>
   );
 };
 

@@ -98,7 +98,7 @@ const NavBar = () => {
                         Joystick
                       </MenuItem>
                     </Link>
-                    <Link to={`/category/${"Llavero"}`}>
+                    <Link to={`/category/subcategory/${"Llaveros"}`}>
                       <MenuItem bg="ligth">
                         <img className="imagen_consola" src="https://firebasestorage.googleapis.com/v0/b/proyecto-react-coder-b2d15.appspot.com/o/Llavero_ico.png?alt=media&token=9eada56f-ca1f-48e3-8722-03018ab6316f" alt="" />
                         Llaveros

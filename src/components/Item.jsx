@@ -23,7 +23,7 @@ const Item = ({ id, name, description_short, price, image }) => {
     <div>
       <div key={id}>
         <Flex alignItems="center">
-          <Card maxW="sm" width={300}>
+          <Card maxW="sm" width={300} minH={"auto"}>
             <CardBody>
               <Image src={image} width={250} />
               <Stack mt="6" spacing="3">
@@ -37,9 +37,10 @@ const Item = ({ id, name, description_short, price, image }) => {
             <Divider />
             <CardFooter>
               <Center className="btn-center">
-                <Button variant="solid" colorScheme="blue">
-                  <Link to={`/item/${id}`}>Detalles</Link>
+                  <Link to={`/item/${id}`}>
+                <Button variant="solid" colorScheme="blue">Detalles
                 </Button>
+                  </Link>
               </Center>
             </CardFooter>
           </Card>

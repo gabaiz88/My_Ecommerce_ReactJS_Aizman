@@ -1,4 +1,4 @@
-import { Heading, Center } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 import ItemList from "./ItemList";
 import { Link, useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
@@ -44,11 +44,28 @@ const ItemListContainer = () => {
     }
   }
 
+  function link_routes() {
+    if (category != null) {
+      return "Consolas > "
+    }  else if (subcategory != null){
+      return "Accesorios > ";
+    } else {
+      return <h2 id="catalogo_text">Catálogo</h2>;
+    }
+  }
+
   return (
-    <div>
-      <Center h="100px" color="black"></Center>
-      {render()}
-    </div>
+    <>
+    
+      <div className="links_tree">
+        {link_routes()}
+        {({category}) ? <Link>{category}{subcategory}</Link>:{}}
+      </div>
+      <div>
+        <Center color="black"></Center>
+        {render()}
+      </div>
+    </>
   );
 };
 

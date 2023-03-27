@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import { collection, Firestore, getDocs, getFirestore } from "firebase/firestore"
-import { useParams } from "react-router-dom";
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 
 
 export const CartContext = createContext([]);
@@ -10,7 +9,6 @@ const ShoppingCartProvider = ({ children }) => {
     const [ cartQty, setCartQty ] = useState(0);
     const [ totalAmount, setTotalAmount ] = useState(0);
     const [ products, setProducts ] = useState([])
-    const [isLoading, setIsLoading] = useState(true);
 
 
     useEffect(() => {
@@ -25,10 +23,13 @@ const ShoppingCartProvider = ({ children }) => {
       })
     },[])
 
-    const cleanCart = () => setCart([]);
+    const cleanCart = () => {
+        setCartQty(0);
+        setCart([]);
+        setTotalAmount(0);
+    }
     
     const findProduct = (id, array) => array.find(product => product.id === id);
-    // const findItemInCart = (id) => cart.find(item => item.id === id);
     
     function substractAmount (price) {
         let amount = totalAmount;

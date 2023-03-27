@@ -1,10 +1,24 @@
-<h2 id="titulo">Proyecto Coder REACT.JS - Aizman</h2>
 
-<h3 id="objetivo">El objetivo del proyecto es realizar una pagina integramente en React.JS. En mi caso se trata de un E-Commerce que comercializa productos relacionados a video juegos.
-Consolas, Juegos, Accesorios. De Nintendo, Playstation y Xbox</h3>
+# Proyecto Coder REACT.JS - Aizman
+---
+### El objetivo del proyecto es realizar una pagina integramente en React.JS En mi caso se trata de un E-Commerce que vende productos relacionados a video juegos. Consolas, Juegos, Accesorios. De Nintendo, Playstation y Xbox.
 
-<p>06/03/2023 - Pre entrega 2: Configurando rutas de acceso, catálogo, filtro por categoría de consolas y formulario en cart</p>
+[Para clonar el proyecto copia el siguiente link:](https://github.com/gabaiz88/My_Ecommerce_ReactJS_Aizman.git)
 
-![NiMiGames](https://user-images.githubusercontent.com/111024432/223128207-56d873cb-5356-4a21-848b-89be508e8a56.gif)
+## Deploy
+---
+* [Link a la página](https://my-ecommerce-react-js-aizman.vercel.app/)
 
-Para clonar el proyecto copia el siguiente link: <a>https://github.com/gabaiz88/My_Ecommerce_ReactJS_Aizman.git</a>
+## Dependencias
+---
+
+*    "chakra-ui/react": "^2.5.1"
+*    "fortawesome/react-fontawesome": "^0.2.0"
+*    "firebase": "^9.17.2"   
+*    "framer-motion": "^10.0.1"
+*    "sweetalert2": "^11.7.3"
+*    "react-router-dom": "^6.8.1"
+*    "react-icons": "^4.8.0"
+
+## Preview del Proyecto
+---

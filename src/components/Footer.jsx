@@ -6,13 +6,6 @@ import { Flex } from "@chakra-ui/react";
 import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
-  const instagram = () => {
-    window.location.href = "https://www.instagram.com";
-  };
-
-  const twitter = () => {
-    window.location.href = "https://www.twitter.com";
-  };
   return (
     <div className="footer">
       <div className="aboutUs">
