@@ -24,7 +24,7 @@ const NavBar = () => {
   return (
     <>
       <div className="navbar">
-        <Flex maxW="150rem" alignItems="center" gap="2" pt="1">
+        <Flex className="navbar__" alignItems="center" gap="2" pt="1">
           <Link to={"/"}>
             <Box display="flex" ml="20">
               <img id="logo_mario" src={logo} />
@@ -33,7 +33,7 @@ const NavBar = () => {
           </Link>
           <Spacer />
           <div className="botones_navbar">
-            <Flex>
+            <Flex justifyContent={"center"}>
               <ButtonGroup className="botones" gap="7" justify="center">
                 <Button colorScheme="teal" variant="link">
                   <Link to={"/catalogue"}>Catálogo</Link>

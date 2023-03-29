@@ -14,17 +14,12 @@ import ItemCount from "./ItemCount";
 import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
 import { doc, getDoc, getFirestore } from "firebase/firestore"
-
+import currencyFormat from "../utils/functions";
 
 const ItemDetail = ({ data }) => {
   const { id } = useParams();
   const { addItem } = useContext(CartContext);
   const [ product, setProduct ] = useState([])
-
-  
-  function currencyFormat(num) {
-    return '$' + num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
- }
 
   useEffect(() => {
     const db = getFirestore();

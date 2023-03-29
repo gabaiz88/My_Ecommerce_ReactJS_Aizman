@@ -11,13 +11,10 @@ import {
     Text,
     Box,
   } from "@chakra-ui/react";
-  
+import currencyFormat from "../utils/functions";
+
 const Brief = () => {
     const { cart, totalAmount, removeProduct } = useContext(CartContext);
-
-    function currencyFormat(num) {
-        return '$' + num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
-     }
 
   return (
     <>

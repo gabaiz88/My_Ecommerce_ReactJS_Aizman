@@ -22,7 +22,6 @@ const Cart = () => {
       </>
     );
   }
-
   return (
     <div className="main_cart">
       {console.log(cart)}
