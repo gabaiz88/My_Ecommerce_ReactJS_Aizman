@@ -5,11 +5,11 @@
 
 [Para clonar el proyecto copia el siguiente link:](https://github.com/gabaiz88/My_Ecommerce_ReactJS_Aizman.git)
 
-## Deploy
+# Deploy
 ---
 * [Link a la página](https://my-ecommerce-react-js-aizman.vercel.app/)
 
-## Dependencias
+# Dependencias
 ---
 
 *    "chakra-ui/react": "^2.5.1"
@@ -20,7 +20,7 @@
 *    "react-router-dom": "^6.8.1"
 *    "react-icons": "^4.8.0"
 
-## Preview del Proyecto
+# Preview del Proyecto
 ---
 
 https://user-images.githubusercontent.com/111024432/228065221-1c264ea6-e549-4d36-abc6-c1094ca324a2.mp4
