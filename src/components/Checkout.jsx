@@ -56,8 +56,6 @@ const FormCart = () => {
 
   const orderCollection = collection(db, "orden");
 
-
-
   return (
     <div className="form_cart">
       <form onSubmit={handleSubmit}>

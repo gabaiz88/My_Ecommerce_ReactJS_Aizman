@@ -3,8 +3,8 @@ import nintendo from "../assets/nintendo-switch.png";
 import ps4 from "../assets/playstation.png";
 import ps5 from "../assets/controller.png";
 import xbox from "../assets/xbox.png";
-import llavero from "../assets/Llavero_ico.png"
-import joystick from "../assets/Joystick_Snes_ico.png"
+import llavero from "../assets/Llavero_ico.png";
+import joystick from "../assets/Joystick_Snes_ico.png";
 import texto_neon from "../assets/Texto_Neon_Multicolor.png";
 import CartWidget from "./CartWidget";
 import Container from "react-bootstrap/Container";
@@ -30,13 +30,23 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="">
-              <Link to="/catalogue">Catálogo</Link>
+              <Link className="link_nav" to="/catalogue">
+                Catálogo
+              </Link>
             </Nav.Link>
-            <NavDropdown title="Consolas" id="collasible-nav-dropdown">
+            <NavDropdown
+              className="link_nav"
+              title="Consolas"
+              id="collasible-nav-dropdown"
+            >
               <NavDropdown.Item href="">
                 <Link to={`/category/${"Nintendo"}`}>
                   <div className="dropDrow_item">
-                    <img className="imagen_consola" src={nintendo} alt="nintendo" />
+                    <img
+                      className="imagen_consola"
+                      src={nintendo}
+                      alt="nintendo"
+                    />
                     <h4>Nintendo</h4>
                   </div>
                 </Link>
@@ -44,7 +54,11 @@ const NavBar = () => {
               <NavDropdown.Item href="">
                 <Link to={`/category/${"Ps4"}`}>
                   <div className="dropDrow_item">
-                    <img className="imagen_consola" src={ps4} alt="playstation 4" />
+                    <img
+                      className="imagen_consola"
+                      src={ps4}
+                      alt="playstation 4"
+                    />
                     <h4>Ps4</h4>
                   </div>
                 </Link>
@@ -52,7 +66,11 @@ const NavBar = () => {
               <NavDropdown.Item href="">
                 <Link to={`/category/${"Ps5"}`}>
                   <div className="dropDrow_item">
-                    <img className="imagen_consola" src={ps5} alt="Playstation 5" />
+                    <img
+                      className="imagen_consola"
+                      src={ps5}
+                      alt="Playstation 5"
+                    />
                     <h4>Ps5</h4>
                   </div>
                 </Link>
@@ -66,26 +84,38 @@ const NavBar = () => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Accesorios" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="">
-                <Link to={`/category/subcategory/${"Joystick"}`}>
-                  <div className="dropDrow_item">
-                    <img className="imagen_consola" src={joystick} alt="Joystick" />
-                    <h4>Joystick</h4>
-                  </div>
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item href="">
-                <Link to={`/category/subcategory/${"Llaveros"}`}>
-                  <div className="dropDrow_item">
-                    <img className="imagen_consola" src={llavero} alt="Llaveros" />
-                    <h4>Llaveros</h4>
-                  </div>
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Link className="link_nav">
+              <NavDropdown title="Accesorios" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="">
+                  <Link to={`/category/subcategory/${"Joystick"}`}>
+                    <div className="dropDrow_item">
+                      <img
+                        className="imagen_consola"
+                        src={joystick}
+                        alt="Joystick"
+                      />
+                      <h4>Joystick</h4>
+                    </div>
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item href="">
+                  <Link to={`/category/subcategory/${"Llaveros"}`}>
+                    <div className="dropDrow_item">
+                      <img
+                        className="imagen_consola"
+                        src={llavero}
+                        alt="Llaveros"
+                      />
+                      <h4>Llaveros</h4>
+                    </div>
+                  </Link>
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Link>
             <Nav.Link href="">
-              <Link to={"/contact"}>Contacto</Link>
+              <Link className="link_nav" to={"/contact"}>
+                Contacto
+              </Link>
             </Nav.Link>
             <Nav.Link href="">
               <Link to={"/cart"}>

@@ -11,7 +11,26 @@
 }
 
 .navbar {
-  background-color: #383838;
+  background-color: #272626;
+} 
+
+.navbar-nav a{
+    color: white !important;
+  }
+
+.link_nav h4{
+    color: #272626;
+}
+
+.link_nav{
+    font-size: 20px;
+    font-weight: 500;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration:dotted;    
+} 
+
+.link_nav :hover{
+    color: #e60012;
 } 
 
 .logo_texto{
@@ -39,10 +58,11 @@ align-items: center;
 .dropDrow_item h4{ 
     font-size: 18px;
     font-weight: 700;
-    font-family: sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .cartWidget_cart {
+    margin-top: 5px;
     position: absolute;
     right: 50px;
 }
