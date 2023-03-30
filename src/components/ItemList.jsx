@@ -1,14 +1,13 @@
 import { Container, Flex } from "@chakra-ui/react";
 import Item from "./Item";
 
-
-const ItemList = ({product}) => {
+const ItemList = ({ product }) => {
   return (
     <>
-        <Container maxW="90%">
-          <Flex gap={"10"} wrap="wrap">
-            {product.map((product) => (
-              <Item
+      <Container maxW="90%">
+        <Flex gap={"10"} wrap="wrap">
+          {product.map((product) => (
+            <Item
               key={product.id}
               id={product.id}
               name={product.name}
@@ -16,12 +15,12 @@ const ItemList = ({product}) => {
               stock={product.stock}
               category={product.category}
               image={product.image}
-              />
-              ))}
-          </Flex>
-        </Container>
-    </>    
+            />
+          ))}
+        </Flex>
+      </Container>
+    </>
   );
 };
 
-export default ItemList
+export default ItemList;

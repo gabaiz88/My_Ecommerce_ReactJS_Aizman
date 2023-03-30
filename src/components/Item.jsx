@@ -12,13 +12,10 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import currencyFormat from "../utils/functions";
 
+//Detalle individual de cada item
 const Item = ({ id, name, description_short, price, image }) => {
-
-  function currencyFormat(num) {
-    return '$' + num.toFixed().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
- }
-
   return (
     <div>
       <div key={id}>
@@ -30,17 +27,18 @@ const Item = ({ id, name, description_short, price, image }) => {
                 <Heading size="sm">{name}</Heading>
                 <Text>{description_short}</Text>
                 <Text color="blue.600" fontSize="2xl">
-                {currencyFormat(1*price)}.-
+                  {currencyFormat(1 * price)}.-
                 </Text>
               </Stack>
             </CardBody>
             <Divider />
             <CardFooter>
               <Center className="btn-center">
-                  <Link to={`/item/${id}`}>
-                <Button variant="solid" colorScheme="blue">Detalles
-                </Button>
-                  </Link>
+                <Link to={`/item/${id}`}>
+                  <Button variant="solid" colorScheme="blue">
+                    Detalles
+                  </Button>
+                </Link>
               </Center>
             </CardFooter>
           </Card>

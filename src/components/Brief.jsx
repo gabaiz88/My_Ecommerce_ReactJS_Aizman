@@ -1,26 +1,27 @@
 import { useContext } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
 import {
-    Button,
-    Container,
-    Heading,
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Text,
-    Box,
-  } from "@chakra-ui/react";
+  Button,
+  Container,
+  Heading,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Text,
+  Box,
+} from "@chakra-ui/react";
 import currencyFormat from "../utils/functions";
 
 const Brief = () => {
-    const { cart, totalAmount, removeProduct } = useContext(CartContext);
+  const { cart, totalAmount, removeProduct } = useContext(CartContext);
 
+  //Listado de productos en el cart
   return (
     <>
-    {cart.map((item) => {
+      {cart.map((item) => {
         return (
-            <Container key={item.id} className="cart_container">
+          <Container key={item.id} className="cart_container">
             <Card className="cards">
               <Box className="img_item">
                 <img src={item.image} alt="imagen_producto" />
@@ -30,23 +31,28 @@ const Brief = () => {
               </CardHeader>
               <CardBody>
                 <Text as="b">Cantidad: {item.quantity}</Text>
-                <Text>Subtotal: {currencyFormat(item.price * item.quantity)}.-</Text>
+                <Text>
+                    {/* Precio subtotal multiplicado por cantidad de productos por item */}
+                  Subtotal: {currencyFormat(item.price * item.quantity)}.-
+                </Text>
               </CardBody>
               <CardFooter>
                 <Button
                   colorScheme="red"
                   onClick={() => removeProduct(item.id)}
-                  >
+                >
                   X
                 </Button>
               </CardFooter>
             </Card>
           </Container>
         );
-    })}
-      <div className="tag_total_amount">Total: {currencyFormat(totalAmount)}.-</div>
+      })}
+      <div className="tag_total_amount">
+        Total: {currencyFormat(totalAmount)}.-
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Brief
+export default Brief;

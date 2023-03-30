@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
+//Boton de cada item para agregar, restar cantidad
 const ItemCount = ({ stock, onAdd, id }) => {
   const [quanti, setQuanti] = useState(1);
 

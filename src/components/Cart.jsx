@@ -2,14 +2,11 @@ import { Link } from "react-router-dom";
 import Checkout from "./Checkout";
 import { useContext } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
-import {
-  Button,
-} from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import Brief from "./Brief";
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
-  console.log(cart);
   if (cart.length === 0) {
     return (
       <>
@@ -24,8 +21,8 @@ const Cart = () => {
   }
   return (
     <div className="main_cart">
-     <Brief/>
-     <Checkout/>
+      <Brief />
+      <Checkout />
     </div>
   );
 };

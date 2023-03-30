@@ -5,6 +5,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { Flex } from "@chakra-ui/react";
 import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
+//Footer completo
 const Footer = () => {
   return (
     <div className="footer">
@@ -45,12 +46,16 @@ const Footer = () => {
         <h2>Contactanos</h2>
         <Link target="_blank" to={"https://wa.link/6cnj10"}>
           <Flex alignItems="center" gap={2}>
-            <i><FontAwesomeIcon icon={faWhatsapp} fontSize={22} /></i>
+            <i>
+              <FontAwesomeIcon icon={faWhatsapp} fontSize={22} />
+            </i>
             <h3>1165858350</h3>
           </Flex>
         </Link>
         <Flex alignItems="center" gap={2}>
-          <i><FontAwesomeIcon icon={faEnvelope} fontSize={22}/></i>
+          <i>
+            <FontAwesomeIcon icon={faEnvelope} fontSize={22} />
+          </i>
           <button
             onClick={() => (window.location = "mailto:gabaiz88@gmail.com")}
           >
@@ -59,7 +64,9 @@ const Footer = () => {
         </Flex>
         <Link target="_blank" to={"https://goo.gl/maps/kjMzH9j4pm9SXN6d9"}>
           <Flex alignItems="center" gap={2}>
-            <i><FontAwesomeIcon icon={faLocationDot} fontSize={22} /></i>
+            <i>
+              <FontAwesomeIcon icon={faLocationDot} fontSize={22} />
+            </i>
             <h3>Av. Díaz Vélez, C1414 CABA</h3>
           </Flex>
         </Link>
@@ -67,11 +74,15 @@ const Footer = () => {
       <div className="footer_networks">
         <h2>Sigamos Conectados..</h2>
         <div className="networks">
-        <Link target="_blank" to={"https://www.instagram.com"}>
-            <i><FontAwesomeIcon icon={faInstagram}/></i>
+          <Link target="_blank" to={"https://www.instagram.com"}>
+            <i>
+              <FontAwesomeIcon icon={faInstagram} />
+            </i>
           </Link>
           <Link target="_blank" to={"https://www.twitter.com"}>
-            <i><FontAwesomeIcon icon={faTwitter}/></i>
+            <i>
+              <FontAwesomeIcon icon={faTwitter} />
+            </i>
           </Link>
         </div>
       </div>

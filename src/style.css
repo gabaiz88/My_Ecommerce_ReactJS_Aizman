@@ -12,31 +12,31 @@
 
 .navbar {
   background-color: #272626;
-} 
-
-.navbar-nav a{
-    color: white !important;
-  }
-
-.link_nav h4{
-    color: #272626;
 }
 
-.link_nav{
-    font-size: 20px;
-    font-weight: 500;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-decoration:dotted;    
-} 
+.navbar-nav a {
+  color: white !important;
+}
 
-.link_nav :hover{
-    color: #e60012;
-} 
+.link_nav h4 {
+  color: #272626;
+}
 
-.logo_texto{
-    display: flex;
-    align-items: center;
-    margin-right: 100px;
+.link_nav {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: dotted;
+}
+
+.link_nav :hover {
+  color: #e60012;
+}
+
+.logo_texto {
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
 }
 
 #logo_mario {
@@ -45,26 +45,26 @@
 }
 
 #texto_neon {
-    width: 250px;
-    height: 45px;
-    margin-left: 20px;
-  }
-
-.dropDrow_item{
-display: flex;
-align-items: center;
+  width: 250px;
+  height: 45px;
+  margin-left: 20px;
 }
 
-.dropDrow_item h4{ 
-    font-size: 18px;
-    font-weight: 700;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.dropDrow_item {
+  display: flex;
+  align-items: center;
+}
+
+.dropDrow_item h4 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .cartWidget_cart {
-    margin-top: 5px;
-    position: absolute;
-    right: 50px;
+  margin-top: 5px;
+  position: absolute;
+  right: 50px;
 }
 
 .cantidad_items {
@@ -79,7 +79,6 @@ align-items: center;
   font-weight: 600;
   color: #fff;
 }
-
 
 .botones button {
   font-size: 20px;
@@ -159,9 +158,8 @@ align-items: center;
   margin: 5px 0;
 }
 
-li{
-    color: #e60012;
-
+li {
+  color: #e60012;
 }
 .footer {
   background-color: rgba(72, 72, 72, 0.1);
@@ -174,8 +172,8 @@ li{
   padding-top: 15px;
 }
 
-.footer a{
-    text-decoration: none;
+.footer a {
+  text-decoration: none;
 }
 
 .footer .networks i {
@@ -206,10 +204,9 @@ li{
   gap: 10px;
 }
 
-.footer .footer_contact i{
-    color:#e60012;
-
-  }
+.footer .footer_contact i {
+  color: #e60012;
+}
 
 .footer h2 {
   font-size: 25px;

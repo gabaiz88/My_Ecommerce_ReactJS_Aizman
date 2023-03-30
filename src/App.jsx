@@ -9,8 +9,7 @@ import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import ShoppingCartProvider from "./Context/ShoppingCartContext";
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
   return (

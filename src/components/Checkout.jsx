@@ -14,6 +14,7 @@ import { collection, addDoc, getFirestore } from "firebase/firestore";
 import { useContext } from "react";
 import { CartContext } from "../Context/ShoppingCartContext";
 import { useNavigate } from "react-router-dom";
+import withReactContent from "sweetalert2-react-content";
 
 const FormCart = () => {
   const [orderId, setOrderId] = useState(null);
@@ -24,27 +25,32 @@ const FormCart = () => {
   const db = getFirestore();
   const { cart, cleanCart } = useContext(CartContext);
   const navigate = useNavigate();
+  const MySwal = withReactContent(Swal);
 
-  const comprarProd = (e) => {
-    e.preventDefault();
-   setTimeout(() => {
-      Swal.fire(
-        "Muchas gracias por tu compra!",
-        `Te enviaremos un mail a la brevedad. En segundos serás redirigido al catálogo`,
-        "success"
-      );
-    }, 1000);
-  }
-
+  //guardado de ID de compra en setOrder y llamda a alert + redireccion
   const handleSubmit = (e) => {
     e.preventDefault();
     addDoc(orderCollection, order).then(({ id }) => setOrderId(id));
-    comprarProd(e);
+    redirigirCompra(e);
+  };
+
+  const redirigirCompra = (e) => {
+    e.preventDefault();
+    MySwal.fire({
+      title: <strong>Muchas gracias por tu compra!</strong>,
+      html: (
+        <i>
+          Te enviaremos un mail a la brevedad con el cupón de pago. Tu ID de
+          orden es: {orderId}
+        </i>
+      ),
+      icon: "success",
+    });
     setTimeout(() => {
-      navigate('/catalogue', { replace: true });
+      navigate("/catalogue", { replace: true });
       cleanCart();
     }, 6000);
-  }
+  };
 
   const order = {
     name,
@@ -52,10 +58,12 @@ const FormCart = () => {
     email,
     phone,
     cart,
+    orderId,
   };
 
-  const orderCollection = collection(db, "orden");
-
+  const orderCollection = collection(db, "order");
+  
+//Formulario de compra
   return (
     <div className="form_cart">
       <form onSubmit={handleSubmit}>

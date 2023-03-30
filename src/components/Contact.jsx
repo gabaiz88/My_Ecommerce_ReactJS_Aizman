@@ -1,5 +1,5 @@
+//Formulario de contacto con envio de email a la casilla que se elija
 const Contact = () => {
-
   return (
     <div className="contact_box">
       <h1>Contacto</h1>
@@ -11,7 +11,14 @@ const Contact = () => {
         <div>
           <div className="first_row">
             <div>
-              <input type="text" name="name" placeholder="Nombre Completo" required minlength="2" maxlength="15"/>
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre Completo"
+                required
+                minlength="2"
+                maxlength="15"
+              />
             </div>
             <div>
               <input
@@ -19,7 +26,8 @@ const Contact = () => {
                 name="email"
                 placeholder="Email"
                 required
-                minlength="6" maxlength="20"
+                minlength="6"
+                maxlength="20"
               />
             </div>
           </div>
@@ -29,7 +37,8 @@ const Contact = () => {
             placeholder="Deja tu mensaje"
             name="message"
             required
-            minlength="10" maxlength="3000"
+            minlength="10"
+            maxlength="3000"
           ></textarea>
         </div>
         <button id="contact_button" type="submit" className="button_contact">

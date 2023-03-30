@@ -10,6 +10,7 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  //Trae los productos de la BD
   useEffect(() => {
     const db = getFirestore();
     const itemsCollection = collection(db, "videojuegos");
@@ -23,13 +24,16 @@ const ItemListContainer = () => {
     });
   }, []);
 
+  //Filtra por categoria
   const catFilterCategory = products.filter(
     (product) => product.category === category
   );
+  //Filtra por subcategoria
   const catFilterSubCategory = products.filter(
     (product) => product.subcategory === subcategory
   );
 
+  //Si no estan los productos, aparece el loading
   function render() {
     if (isLoading) {
       return <Loading />;
@@ -44,10 +48,11 @@ const ItemListContainer = () => {
     }
   }
 
+  //Rutas de link >
   function link_routes() {
     if (category != null) {
-      return "Consolas > "
-    }  else if (subcategory != null){
+      return "Consolas > ";
+    } else if (subcategory != null) {
       return "Accesorios > ";
     } else {
       return <h2 id="catalogo_text">Catálogo</h2>;
@@ -56,10 +61,16 @@ const ItemListContainer = () => {
 
   return (
     <>
-    
       <div className="links_tree">
         {link_routes()}
-        {({category}) ? <Link>{category}{subcategory}</Link>:{}}
+        {{ category } ? (
+          <Link>
+            {category}
+            {subcategory}
+          </Link>
+        ) : (
+          {}
+        )}
       </div>
       <div>
         <Center color="black"></Center>
