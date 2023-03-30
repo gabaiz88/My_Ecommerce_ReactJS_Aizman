@@ -1,125 +1,101 @@
 import React from "react";
-import {
-  Button,
-  Flex,
-  Spacer,
-  Box,
-  ButtonGroup,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-} from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import nintendo from "../assets/nintendo-switch.png";
 import ps4 from "../assets/playstation.png";
 import ps5 from "../assets/controller.png";
 import xbox from "../assets/xbox.png";
-import logo from "../assets/mario.png";
+import llavero from "../assets/Llavero_ico.png"
+import joystick from "../assets/Joystick_Snes_ico.png"
 import texto_neon from "../assets/Texto_Neon_Multicolor.png";
 import CartWidget from "./CartWidget";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <>
-      <div className="navbar">
-        <Flex className="navbar__" alignItems="center" gap="2" pt="1">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="">
           <Link to={"/"}>
-            <Box display="flex" ml="20">
-              <img id="logo_mario" src={logo} />
-              <img id="texto_neon" src={texto_neon} alt="" />
-            </Box>
+            {/* Logo */}
+            <div className="logo_texto">
+              {/* <img id="logo_mario" src={logo} alt="logo mario"/> */}
+              <img id="texto_neon" src={texto_neon} alt="texto nimigames" />
+            </div>
           </Link>
-          <Spacer />
-          <div className="botones_navbar">
-            <Flex justifyContent={"center"}>
-              <ButtonGroup className="botones" gap="7" justify="center">
-                <Button colorScheme="teal" variant="link">
-                  <Link to={"/catalogue"}>Catálogo</Link>
-                </Button>
-                <Menu className="menu_nav">
-                  <MenuButton
-                    bg="light"
-                    as={Button}
-                    colorScheme="light"
-                    rightIcon={<ChevronDownIcon />}
-                  >
-                    Consolas
-                  </MenuButton>
-                  <MenuList bg="#383838">
-                    <Flex>
-                      <Link to={`/category/${"Nintendo"}`}>
-                        <MenuItem bg="ligth">
-                          <img className="imagen_consola" src={nintendo} alt="" />
-                          Nintendo
-                        </MenuItem>
-                      </Link>
-                    </Flex>
-                    <Flex>
-                    <Link to={`/category/${"Ps4"}`}>
-                      <MenuItem bg="ligth">
-                        <img className="imagen_consola" src={ps4} alt="" />
-                        Ps 4
-                      </MenuItem>
-                    </Link>  
-                    </Flex>
-                    <Flex>
-                    <Link to={`/category/${"Ps5"}`}>
-                      <MenuItem bg="ligth">
-                        <img className="imagen_consola" src={ps5} alt="" />
-                        Ps 5
-                      </MenuItem>
-                    </Link>  
-                    </Flex>
-                    <Flex>
-                    <Link to={`/category/${"Xbox"}`}>
-                      <MenuItem bg="ligth">
-                        <img className="imagen_consola" src={xbox} alt="" />
-                        Xbox
-                      </MenuItem>
-                    </Link>
-                    </Flex>
-                  </MenuList>
-                </Menu>
-                <Menu className="menu_nav">
-                  <MenuButton
-                    bg="light"
-                    as={Button}
-                    colorScheme="light"
-                    rightIcon={<ChevronDownIcon />}
-                  >
-                    Accesorios
-                  </MenuButton>
-                  <MenuList bg="#383838">
-                    <Link to={`/category/subcategory/${"Joystick"}`}>
-                      <MenuItem bg="ligth">
-                       <img className="imagen_consola" src="https://firebasestorage.googleapis.com/v0/b/proyecto-react-coder-b2d15.appspot.com/o/Joystick_Snes_ico.png?alt=media&token=2ad52680-50db-4f83-90f6-280238f3f53a" alt="" />
-                        Joystick
-                      </MenuItem>
-                    </Link>
-                    <Link to={`/category/subcategory/${"Llaveros"}`}>
-                      <MenuItem bg="ligth">
-                        <img className="imagen_consola" src="https://firebasestorage.googleapis.com/v0/b/proyecto-react-coder-b2d15.appspot.com/o/Llavero_ico.png?alt=media&token=9eada56f-ca1f-48e3-8722-03018ab6316f" alt="" />
-                        Llaveros
-                      </MenuItem>
-                    </Link>
-                  </MenuList>
-                </Menu>
-                <Link to={"/contact"}>
-                <Button colorScheme="teal" variant="outline">
-                  Contacto
-                </Button>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="">
+              <Link to="/catalogue">Catálogo</Link>
+            </Nav.Link>
+            <NavDropdown title="Consolas" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="">
+                <Link to={`/category/${"Nintendo"}`}>
+                  <div className="dropDrow_item">
+                    <img className="imagen_consola" src={nintendo} alt="nintendo" />
+                    <h4>Nintendo</h4>
+                  </div>
                 </Link>
-              </ButtonGroup>
-            </Flex>
-          </div>
-          <Link to={"/cart"}>
-            <CartWidget />
-          </Link>
-        </Flex>
-      </div>
-    </>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="">
+                <Link to={`/category/${"Ps4"}`}>
+                  <div className="dropDrow_item">
+                    <img className="imagen_consola" src={ps4} alt="playstation 4" />
+                    <h4>Ps4</h4>
+                  </div>
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="">
+                <Link to={`/category/${"Ps5"}`}>
+                  <div className="dropDrow_item">
+                    <img className="imagen_consola" src={ps5} alt="Playstation 5" />
+                    <h4>Ps5</h4>
+                  </div>
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="">
+                <Link to={`/category/${"Xbox"}`}>
+                  <div className="dropDrow_item">
+                    <img className="imagen_consola" src={xbox} alt="Xbox" />
+                    <h4>Xbox</h4>
+                  </div>
+                </Link>
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="Accesorios" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="">
+                <Link to={`/category/subcategory/${"Joystick"}`}>
+                  <div className="dropDrow_item">
+                    <img className="imagen_consola" src={joystick} alt="Joystick" />
+                    <h4>Joystick</h4>
+                  </div>
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="">
+                <Link to={`/category/subcategory/${"Llaveros"}`}>
+                  <div className="dropDrow_item">
+                    <img className="imagen_consola" src={llavero} alt="Llaveros" />
+                    <h4>Llaveros</h4>
+                  </div>
+                </Link>
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="">
+              <Link to={"/contact"}>Contacto</Link>
+            </Nav.Link>
+            <Nav.Link href="">
+              <Link to={"/cart"}>
+                <CartWidget />
+              </Link>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 

@@ -9,6 +9,8 @@ import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import ShoppingCartProvider from "./Context/ShoppingCartContext";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   return (
@@ -25,7 +27,7 @@ const App = () => {
                 path="/category/:category"
                 element={<ItemListContainer />}
               />
-                <Route
+              <Route
                 exact
                 path="/category/subcategory/:subcategory"
                 element={<ItemListContainer />}

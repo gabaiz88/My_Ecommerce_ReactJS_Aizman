@@ -9,7 +9,7 @@ import Brief from "./Brief";
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
-
+  console.log(cart);
   if (cart.length === 0) {
     return (
       <>
@@ -24,7 +24,6 @@ const Cart = () => {
   }
   return (
     <div className="main_cart">
-      {console.log(cart)}
      <Brief/>
      <Checkout/>
     </div>

@@ -97,6 +97,7 @@ const ShoppingCartProvider = ({ children }) => {
     setCart(newCart);
     setCartQty(total);
     addAmount(item.price, quantity);
+    console.log(cart);
   };
 
   return (

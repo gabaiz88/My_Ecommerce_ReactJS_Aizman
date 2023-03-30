@@ -8,12 +8,12 @@ const CartWidget = ({}) => {
   const { cartQty } = useContext(CartContext);
 
   return (
-    <>       
+    <div className="cartWidget_cart">       
     <Flex>
-            <i><FontAwesomeIcon icon={faCartShopping} color="#fff" fontSize={40} /></i>
+            <i><FontAwesomeIcon icon={faCartShopping} color="#fff" fontSize={35} /></i>
             <p className="cantidad_items">{cartQty}</p>
     </Flex>
-    </>
+    </div>
   )
 }
 
