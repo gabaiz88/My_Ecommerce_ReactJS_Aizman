@@ -30,27 +30,13 @@ const FormCart = () => {
   //guardado de ID de compra en setOrder y llamda a alert + redireccion
   const handleSubmit = (e) => {
     e.preventDefault();
-    addDoc(orderCollection, order).then(({ id }) => setOrderId(id));
-    redirigirCompra(e);
+    addDoc(orderCollection, order).then(({ id }) => {
+      setOrderId(id);
+      redirigirCompra(e, id);
+    });
   };
 
-  const redirigirCompra = (e) => {
-    e.preventDefault();
-    MySwal.fire({
-      title: <strong>Muchas gracias por tu compra!</strong>,
-      html: (
-        <i>
-          Te enviaremos un mail a la brevedad con el cupón de pago. Tu ID de
-          orden es: {orderId}
-        </i>
-      ),
-      icon: "success",
-    });
-    setTimeout(() => {
-      navigate("/catalogue", { replace: true });
-      cleanCart();
-    }, 6000);
-  };
+  const orderCollection = collection(db, "order");
 
   const order = {
     name,
@@ -61,7 +47,25 @@ const FormCart = () => {
     orderId,
   };
 
-  const orderCollection = collection(db, "order");
+  const redirigirCompra = (e, id) => {
+    e.preventDefault();
+    MySwal.fire({
+      title: <strong>Muchas gracias por tu compra!</strong>,
+      html: (
+        <i>
+          Te enviaremos un mail a la brevedad con el cupón de pago. Tu ID de
+          orden es: {id}
+        </i>
+      ),
+      icon: "success",
+    });
+    setTimeout(() => {
+      navigate("/catalogue", { replace: true });
+      cleanCart();
+    }, 6000);
+
+  };
+
   
 //Formulario de compra
   return (
@@ -106,7 +110,7 @@ const FormCart = () => {
               <Radio value="Fijo">Fijo</Radio>
             </HStack>
           </RadioGroup>
-          <Button id="confirm" type="submit" marginTop={5} marginBottom={5} colorScheme="whatsapp">
+          <Button id="confirm" type="submit" left="60%" colorScheme="whatsapp">
             Confirmar Compra
           </Button>
         </FormControl>
