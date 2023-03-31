@@ -169,6 +169,7 @@ li {
   align-items: center;
   text-align: center;
   color: #e60012;
+  margin-top: 20px;
 }
 
 .footer .aboutUs {
@@ -352,10 +353,9 @@ li {
 
     .footer {
       height: 280px;
-      display: flex;
+      flex-direction: row;
       align-items: flex-start;
       justify-content: space-around;
-      margin-top: 20px;
       padding-top: 15px;
     }
   
@@ -377,26 +377,14 @@ li {
     }
 
     .contact_box {
-        background-color: #e60012;
-        width: 100%;
-        height: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
         margin: 30px 0;
-        color: #fff;
       }
 
       .contact_box .text_area textarea {
         width: 850px;
-        height: 200px;
-        background-color: #fff;
-        color: black;
-        border-radius: 5px;
-        margin: 30px 0;
         font-size: 20px;
       }
+
       .contact_box .first_row {
         flex-direction: row;
         font-size: 25px;

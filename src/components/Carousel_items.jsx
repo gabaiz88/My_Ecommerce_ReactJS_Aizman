@@ -6,7 +6,7 @@ const Carousel_items = () => {
   return (
     <div id="carousel_items">
       <Carousel>
-        <Carousel.Item interval={1000}>
+        <Carousel.Item interval={3000}>
           <Link to={`/category/${"Ps5"}`}>
           <img
             className="imagen_car"
@@ -15,7 +15,7 @@ const Carousel_items = () => {
             />
             </Link>
         </Carousel.Item>
-        <Carousel.Item interval={1000}>
+        <Carousel.Item interval={3000}>
         <Link to={`/category/${"Nintendo"}`}>
           <img
             className="imagen_car"
@@ -24,7 +24,7 @@ const Carousel_items = () => {
           />
           </Link>
         </Carousel.Item>
-        <Carousel.Item interval={1000}>
+        <Carousel.Item interval={3000}>
         <Link to={`/category/${"Ps4"}`}>
           <img
             className="imagen_car"
