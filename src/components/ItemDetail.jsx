@@ -48,7 +48,7 @@ const ItemDetail = ({ data }) => {
                 <Stack mt="6" spacing="3">
                   <Heading size="md">{dato.name}</Heading>
                   <Text>{dato.description_short}</Text>
-                  <Text color="blue.600" fontSize="2xl">
+                  <Text color="red.500" fontSize="2xl">
                     {currencyFormat(dato.price)}.-
                   </Text>
                 </Stack>

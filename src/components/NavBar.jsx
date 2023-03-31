@@ -113,7 +113,7 @@ const NavBar = () => {
               </NavDropdown>
             </Link>
             <Nav.Link href="">
-              <Link className="link_nav" to={"/contact"}>
+              <Link className="link_nav" id="link_nav_contact" to={"/contact"}>
                 Contacto
               </Link>
             </Nav.Link>
