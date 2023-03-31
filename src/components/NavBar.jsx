@@ -22,7 +22,6 @@ const NavBar = () => {
           <Link to={"/"}>
             {/* Logo */}
             <div className="logo_texto">
-              {/* <img id="logo_mario" src={logo} alt="logo mario"/> */}
               <img id="texto_neon" src={texto_neon} alt="texto nimigames" />
             </div>
           </Link>

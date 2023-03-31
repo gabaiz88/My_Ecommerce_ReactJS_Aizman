@@ -2,7 +2,6 @@ import ItemDetail from "./ItemDetail";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
-import { Center } from "@chakra-ui/react";
 
 const ItemDetailContainer = () => {
   const [products, setProducts] = useState([]);
@@ -31,10 +30,9 @@ const ItemDetailContainer = () => {
   }
 
   return (
-    <div>
-      <Center color="black"></Center>
-      {render()}
-    </div>
+    <>
+      <div>{render()}</div>
+    </>
   );
 };
 

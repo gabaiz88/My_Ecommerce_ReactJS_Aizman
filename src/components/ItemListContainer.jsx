@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
+import Carousel_items from "./Carousel_items";
 
 const ItemListContainer = () => {
   const { category, subcategory } = useParams();
@@ -54,8 +55,12 @@ const ItemListContainer = () => {
       return "Consolas > ";
     } else if (subcategory != null) {
       return "Accesorios > ";
-    } else {
-      return <h2 id="catalogo_text">Catálogo</h2>;
+    } 
+  }
+
+  function carousel() {
+    if (!category && !subcategory){
+      return <Carousel_items/>
     }
   }
 
@@ -71,6 +76,9 @@ const ItemListContainer = () => {
         ) : (
           {}
         )}
+      </div>
+      <div>
+        {carousel()}
       </div>
       <div>
         <Center color="black"></Center>
