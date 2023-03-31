@@ -106,7 +106,7 @@ const FormCart = () => {
               <Radio value="Fijo">Fijo</Radio>
             </HStack>
           </RadioGroup>
-          <Button id="confirm" type="submit" left="60%" colorScheme="whatsapp">
+          <Button id="confirm" type="submit" marginTop={5} marginBottom={5} colorScheme="whatsapp">
             Confirmar Compra
           </Button>
         </FormControl>
