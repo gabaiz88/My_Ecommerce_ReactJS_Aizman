@@ -10,6 +10,7 @@ const ShoppingCartProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const db = getFirestore();
 
+  //llamado a los productos de las BD
   useEffect(() => {
     const itemsCollection = collection(db, "videojuegos");
     getDocs(itemsCollection).then((snapshot) => {
@@ -21,26 +22,31 @@ const ShoppingCartProvider = ({ children }) => {
     });
   }, []);
 
+  //Funcion que borra el carrito y la cantidad en él
   const cleanCart = () => {
     setCartQty(0);
     setCart([]);
     setTotalAmount(0);
   };
 
+  //Funcion que encuentra un producto segun el ID
   const findProduct = (id, array) => array.find((product) => product.id === id);
 
+  //Funcion para restar precio al total
   function substractAmount(price) {
     let amount = totalAmount;
     amount -= price;
     setTotalAmount(amount);
   }
 
+  //Funcion para restar cantidad de producto
   function substractQty() {
     if (cartQty > 0) {
       setCartQty(cartQty - 1);
     }
   }
 
+  //Funcion para ver si el cart esta vacio
   function cartIsEmpty() {
     let empty = false;
     for (let index = 0; index < cart.length; index++) {
@@ -51,6 +57,7 @@ const ShoppingCartProvider = ({ children }) => {
     return empty;
   }
 
+  //Funcion para remover producto del cart
   const removeProduct = (id) => {
     let itemInCart = findProduct(id, cart);
     let quantity = itemInCart.quantity--;
@@ -71,12 +78,14 @@ const ShoppingCartProvider = ({ children }) => {
     }
   };
 
+  //Funcion para sumar un precio al total
   function addAmount(price, quantity) {
     let amount = totalAmount;
     amount += price * quantity;
     setTotalAmount(amount);
   }
 
+  //Funcion para añadir producto al cart
   const addItem = (quantity, id) => {
     let total = cartQty;
     let newCart;
