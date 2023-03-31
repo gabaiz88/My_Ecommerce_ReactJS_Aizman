@@ -36,7 +36,6 @@
 .logo_texto {
   display: flex;
   align-items: center;
-  margin-right: 100px;
 }
 
 #logo_mario {
@@ -346,6 +345,11 @@ li {
 }
 
 @media (min-width: 768px) {
+
+    .logo_texto {
+        margin-right: 100px;
+      }
+
     .footer {
       height: 280px;
       display: flex;
