@@ -17,7 +17,7 @@ const Contact = () => {
                 placeholder="Nombre Completo"
                 required
                 minlength="2"
-                maxlength="15"
+                maxlength="30"
               />
             </div>
             <div>
@@ -27,7 +27,7 @@ const Contact = () => {
                 placeholder="Email"
                 required
                 minlength="6"
-                maxlength="20"
+                maxlength="30"
               />
             </div>
           </div>
