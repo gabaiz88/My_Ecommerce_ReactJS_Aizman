@@ -19,9 +19,13 @@
 *    "sweetalert2": "^11.7.3"
 *    "react-router-dom": "^6.8.1"
 *    "react-icons": "^4.8.0"
+*    "sweetalert2-react-content": "^5.0.7"
+*    "react-bootstrap": "^2.7.2",
 
 # Preview del Proyecto
 ---
 
-https://user-images.githubusercontent.com/111024432/228065221-1c264ea6-e549-4d36-abc6-c1094ca324a2.mp4
+https://user-images.githubusercontent.com/111024432/229239867-cf421352-2514-4948-a281-04035f7299b0.mp4
+
+
 
