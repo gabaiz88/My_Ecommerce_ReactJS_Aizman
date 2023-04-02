@@ -26,6 +26,8 @@ const FormCart = () => {
   const { cart, cleanCart } = useContext(CartContext);
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
+  const new_date = new Date();
+  let order_date = new_date.toLocaleString();
 
   //guardado de ID de compra en setOrder y llamda a alert + redireccion
   const handleSubmit = (e) => {
@@ -45,6 +47,7 @@ const FormCart = () => {
     phone,
     cart,
     orderId,
+    order_date,
   };
 
   const redirigirCompra = (e, id) => {
